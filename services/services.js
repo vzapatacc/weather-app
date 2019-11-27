@@ -10,11 +10,8 @@ function WeatherService($http) {
 
     this.callAPI = function(city, unit, callback, callbackError) {
         const url = `${this.apiURL}?q=${encodeURI(city)}&units=${unit}&appid=${this.apiKey}`;
-        console.log(url);
-        console.log("Calling the Weather API for city: ", city);
         $http.get(url)
             .then(function(result) {
-                console.log(result);
                 if(result.status === 200) {
                     const data = result.data;
                     const weatherDetail = {

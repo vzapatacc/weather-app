@@ -7,7 +7,7 @@ function WeatherController(WeatherService) {
     let vm = this;
     vm.city = 'Cordoba, AR';
     vm.unit = 'metric';
-    vm.sortBy = 'city';
+    vm.sortBy = '';
     vm.reverse = false;
     vm.errorMessage = null;
     vm.citiesDetail = [];
