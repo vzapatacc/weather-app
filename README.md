@@ -4,7 +4,7 @@ Weather App Challenge
 How to use it
 --------------
 1. Download the application.
-2. Open the `index.html` page which is on the root of the solution in your favorite browser.
+2. In the root folder, there is a file called `index.html`. Open it in your favorite browser.
 3. Use it!
 
 Things that could be improved
