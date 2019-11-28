@@ -14,11 +14,10 @@ function WeatherController(WeatherService) {
     
     vm.submit = function() {
         vm.errorMessage = null;
-        WeatherService.callAPI(vm.city.trim(), vm.unit, 
+        WeatherService.callAPI(vm.city.trim(),
         function(cityDetail) {
             vm.citiesDetail.push(cityDetail);
             vm.city = '';
-            vm.unit = 'metric';
         }, function(errorMessage) {
             vm.errorMessage = errorMessage;
         });  

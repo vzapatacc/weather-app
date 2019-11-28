@@ -21,7 +21,7 @@
                 placeholder="Enter City name..." autofocus ng-model="vm.city">
                 <button type="submit" class="btn btn-primary col-2">Get weather</button>
             </div>
-            
+            <hr />    
             <div class="form-group row">
                 <label for="inputCity" class="col-form-label col-3">Temperature Unit:</label>
                 <div class="form-check form-check-inline col-1">
@@ -79,8 +79,8 @@
             <tbody>
                 <tr ng-repeat="cityDetail in vm.citiesDetail | orderBy:vm.sortBy:vm.reverse">
                     <td>{{ cityDetail.city }}, {{ cityDetail.country }}</td>
-                    <td>{{ cityDetail.temperature }} {{ cityDetail.unit === 'metric' ? 'C' : 'F' }}</td>
-                    <td>{{ cityDetail.windSpeed }} {{ cityDetail.unit === 'metric' ? 'm/s' : 'm/h' }}</td>
+                    <td>{{ cityDetail.temperature | temperature : vm.unit }} </td>
+                    <td>{{ cityDetail.windSpeed }} m/s</td>
                     <td>{{ cityDetail.cloud }}%</td>
                     <td>{{ cityDetail.sunrise | date : 'HH:mm' }}</td>
                     <td>{{ cityDetail.sunset | date : 'HH:mm' }}</td>
@@ -97,5 +97,6 @@
     <script src="weather.module.js"></script>
     <script src="services/services.js"></script>
     <script src="controllers/controllers.js"></script>
+    <script src="filters/temperature.filter.js"></script>
 </body>
 </html>
